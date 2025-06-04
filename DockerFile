@@ -2,7 +2,7 @@
 ARG FEDORA_VERSION=41
 #Base image
 FROM fedora:${FEDORA_VERSION}
-#To avoid file permission error, set as root user.
+#To avoid file permission error, set as root user. In docker, default user is root. With devcontainer and Podman, default user is the host user. 
 USER root
 #To run as non root, you can set the home to a different folder, but we are choosing to run as root for now.
 # ENV HOME=/tmp
