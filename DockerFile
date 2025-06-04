@@ -1,0 +1,8 @@
+#Set Versions.
+ARG FEDORA_VERSION=41
+#Base image
+FROM fedora:${FEDORA_VERSION}
+#To avoid file permission error, set home distinct from root. 
+ENV HOME=/tmp
+#Install dev packages, just git for now.
+RUN dnf upgrade --refresh -y && dnf install -y git
