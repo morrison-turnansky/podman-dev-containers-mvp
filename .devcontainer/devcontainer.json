@@ -9,10 +9,8 @@
 		"dockerfile": "../DockerFile"
 	},
 	"postCreateCommand": "git config --global --add safe.directory ${containerWorkspaceFolder}",
-
 	// Mount Git config.
 	"mounts": [
   		"source=${env:HOME}/.gitconfig,target=/home/vscode/.gitconfig,type=bind,consistency=cached"
 	]
-
 }

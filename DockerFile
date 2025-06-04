@@ -2,7 +2,9 @@
 ARG FEDORA_VERSION=41
 #Base image
 FROM fedora:${FEDORA_VERSION}
-#To avoid file permission error, set home distinct from root. 
-ENV HOME=/tmp
+#To avoid file permission error, set as root user.
+USER root
+#To run as non root, you can set the home to a different folder, but we are choosing to run as root for now.
+# ENV HOME=/tmp
 #Install dev packages, just git for now.
 RUN dnf upgrade --refresh -y && dnf install -y git
