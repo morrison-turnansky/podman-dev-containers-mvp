@@ -4,6 +4,15 @@ This is a minimal viable product demonstrating how to use **dev containers** wit
 
 ---
 
+# Why You Should Use Dev Containers
+
+1. Ensures every developer works in the same environment, eliminating "it works on my machine" problems.
+
+2. Dependencies, tools, and configurations are all containerized.
+
+3. Since the development environment is containerized, the same container setup can be deployed to staging or production with minimal changes, streamlining the path from development to deployment.
+
+
 ## Prerequisites
 
 1. **Git Configuration**  
