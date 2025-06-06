@@ -4,7 +4,7 @@ This is a minimal viable product demonstrating how to use **dev containers** wit
 
 ---
 
-# Why You Should Use Dev Containers
+## Why You Should Use Dev Containers
 
 1. Ensures every developer works in the same environment, eliminating "it works on my machine" problems.
 
