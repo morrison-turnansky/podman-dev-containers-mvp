@@ -1,6 +1,6 @@
 {
     "docker.environment":{
-        "docker.host":"unix:///run/user/4219822/podman/podman.sock", 
+        "docker.host":"unix:///run/user/${env:UID}/podman/podman.sock", 
         "docker.dockerPath" : "podmam" 
     },
     "dev.containers.dockerPath": "podman"
