@@ -23,15 +23,18 @@ This is a minimal viable product demonstrating how to use **dev containers** wit
    git config --global user.email "your-email@example.com"
    ```
 
-
 2. **Install Podman**
    If you are using Fedorda at Red Hat, it should be preinstalled. 
 
-3. **Install vscode**
+3. **Install VSCode**
 
 4. **Install  vscode extensions**
     Install the following extensions: dev containers.
 
+5. **Set docker path for VSCode**
+   Add "dev.containers.dockerPath": "podman" to the settings.json file in your User VSCode settings.
+   Default location is at ~/.config/Code/User/settings.json. 
+ 
 ## Using the project: 
 
 1. **Clone the project** 
@@ -43,6 +46,6 @@ This is a minimal viable product demonstrating how to use **dev containers** wit
       code ./podman-dev-containers-mvp
    ``` 
 
-In the bottome left hand corner of the vs code window there is a blue button, press on it and select reopen in container from the drop down menu. 
+In the bottome left hand corner of the VSCode window there is a blue button, press on it and select reopen in container from the drop down menu. 
 
 You now have containerized environment. Git credentials will be copied from your host, so develop as your normally would. 
