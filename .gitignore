@@ -1,0 +1,47 @@
+# Git tracking
+branch-track
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+*.ipynb_checkpoints
+
+# Virtual environments
+venv/
+env/
+ENV/
+.venv
+
+# Claude Code
+.claude/.file-tracker.json
+
+# Credentials and secrets
+.env
+.env.local
+*.key
+*.pem
+credentials.json
+secrets.yaml
+
+# OS
+.DS_Store
+Thumbs.db

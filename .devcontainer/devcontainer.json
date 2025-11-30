@@ -20,7 +20,8 @@
 		"CLAUDE_CODE_USE_VERTEX": "1",
 		"CLOUD_ML_REGION": "us-east5",
 		"GOOGLE_APPLICATION_CREDENTIALS": "/root/.config/gcloud/application_default_credentials.json",
-		"MAX_JOBS": "32"
+		"MAX_JOBS": "32",
+		"CLAUDE_PROJECT_DIR": "${containerWorkspaceFolder}"
 	},
 	"customizations": {
 		"vscode": {

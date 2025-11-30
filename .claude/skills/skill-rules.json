@@ -1,0 +1,14 @@
+{
+  "version": "1.0.0",
+  "skills": {
+    "hello-world": {
+      "type": "domain",
+      "enforcement": "suggest",
+      "priority": "medium",
+      "promptTriggers": {
+        "keywords": ["hello", "world"],
+        "intentPatterns": ["hello.*world"]
+      }
+    }
+  }
+}
