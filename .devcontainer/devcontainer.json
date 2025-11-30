@@ -6,11 +6,27 @@
 		// Sets the run context to one level up instead of the .devcontainer folder.
 		"context": "..",
 		// Update the 'dockerFile' property if you aren't using the standard 'Dockerfile' filename.
-		"dockerfile": "../DockerFile"
+		"dockerfile": "../Dockerfile"
 	},
-	"postCreateCommand": "git config --global --add safe.directory ${containerWorkspaceFolder}",
+	"postCreateCommand": "git config --global --add safe.directory ${containerWorkspaceFolder} && ./scripts/setup_claude.sh",
 	// Mount Git config.
 	"mounts": [
-  		"source=${env:HOME}/.gitconfig,target=/home/vscode/.gitconfig,type=bind,consistency=cached"
-	]
+		"source=${env:HOME}/.gitconfig,target=/home/vscode/.gitconfig,type=bind,consistency=cached",
+		"type=bind,source=${localEnv:HOME}/.config/gcloud,target=/root/.config/gcloud,consistency=cached",
+		"type=bind,source=${localEnv:HOME}/.anthropic,target=/root/.anthropic,consistency=cached"
+	],
+	"containerEnv": {
+		"ANTHROPIC_VERTEX_PROJECT_ID": "itpc-gcp-ai-eng-claude",
+		"CLAUDE_CODE_USE_VERTEX": "1",
+		"CLOUD_ML_REGION": "us-east5",
+		"GOOGLE_APPLICATION_CREDENTIALS": "/root/.config/gcloud/application_default_credentials.json",
+		"MAX_JOBS": "32"
+	},
+	"customizations": {
+		"vscode": {
+			"extensions": [
+				"anthropic.claude-code"
+			]
+		}
+	}
 }
