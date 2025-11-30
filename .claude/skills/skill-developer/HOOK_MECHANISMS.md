@@ -88,22 +88,24 @@ Claude calls Edit/Write tool
     ↓
 .claude/settings.json registers hook (matcher: Edit|Write)
     ↓
-skill-verification-guard.sh executes
+skill-activation-prompt.sh executes
     ↓
-npx tsx skill-verification-guard.ts
+python skill-activation-prompt.py
     ↓
 Hook reads stdin (JSON with tool_name, tool_input)
     ↓
 Loads skill-rules.json
     ↓
-Checks file path patterns (glob matching)
+Matches keywords + intent patterns
     ↓
-Reads file for content patterns (if file exists)
+Groups matches by priority (critical → high → medium → low)
     ↓
-Checks session state (was skill already used?)
+Outputs formatted message to stdout
     ↓
-Checks skip conditions (file markers, env vars)
+stdout becomes context for Claude (injected before prompt)
     ↓
+Claude sees: [skill suggestion] + user's prompt
+    
 IF MATCHED AND NOT SKIPPED:
   Update session state (mark skill as enforced)
   Output block message to stderr
